@@ -6,7 +6,7 @@ on:
     - cron: "0 0 * * *"
   push:
     branches:
-      - master
+      - main
     paths:
       - scripts/nike_sync.py
       - scripts/nike_to_strava_sync.py
@@ -20,12 +20,12 @@ on:
 
 env:
   # please change to your own config.
-  RUN_TYPE: pass # support runtastic/strava/nike/garmin/garmin_cn/keep/only_gpx/nike_to_strava, Please change the 'pass' it to your own
-  ATHLETE: yihong0618
-  TITLE: Yihong0618 Running
-  TITLE_GRID: Over 10km Runs
-  GITHUB_NAME: yihong0618
-  GITHUB_EMAIL: zouzou0208@gmail.com
+  RUN_TYPE: run # support runtastic/strava/nike/garmin/garmin_cn/keep/only_gpx/nike_to_strava, Please change the 'pass' it to your own
+  ATHLETE: Tianheg
+  TITLE: Tianheg Running
+  TITLE_GRID: Tianheg Runs
+  GITHUB_NAME: tianheg
+  GITHUB_EMAIL: yidajiabei@163.com
 
 jobs:
   sync:
