@@ -1,62 +1,4 @@
-![running_page](https://socialify.git.ci/yihong0618/running_page/image?description=1&font=Inter&forks=1&issues=1&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2Fshaonianche%2Fgallery%2Fmaster%2Frunning_page%2Frunning_page_logo_150*150.jpg&owner=1&pulls=1&stargazers=1&theme=Light)
-
-# [打造个人跑步主页](https://yihong.run/running) 
-简体中文 | [English](README-EN.md)
-
-<details>
-<summary>GIF 展示</summary>
-
-![running_page](https://user-images.githubusercontent.com/15976103/98808834-c02f1d80-2457-11eb-9a7c-70e91faa5e30.gif)
-
-</details>
-
-## [大家的跑步主页展示](https://github.com/yihong0618/running_page/issues/12)
-
-| Runner | page | App |
-| ------- | ------- | ------- |
-| [shaonianche](https://github.com/shaonianche) | https://run.duangfei.org | Nike |
-| [yihong0618](https://github.com/yihong0618) | https://yihong.run/running | Nike |
-| [superleeyom](https://github.com/superleeyom) | https://running.leeyom.top | Nike |
-| [geekplux](https://github.com/geekplux) | https://activities.geekplux.com | Nike |
-| [guanlan](https://github.com/guanlan) | https://grun.vercel.app | Strava |
-| [tuzimoe](https://github.com/tuzimoe) | https://run.tuzi.moe | Nike |
-| [ben_29](https://github.com/ben-29) | https://running.ben29.xyz | Strava |
-| [kcllf](https://github.com/kcllf) | https://running-tau.vercel.app | Garmin-cn |
-| [mq](https://github.com/MQ-0707) | https://running-iota.vercel.app | Keep |
-| [zhaohongxuan](https://github.com/zhaohongxuan) | https://running-page-psi.vercel.app | Keep |
-| [yvetterowe](https://github.com/yvetterowe) | https://run.haoluo.io | Strava |
-| [love-exercise](https://github.com/KaiOrange) | https://run.kai666666.top | Keep |
-| [zstone12](https://github.com/zstone12) | https://running-page.zstone12.vercel.app | Keep |
-| [Lax](https://github.com/Lax) | https://lax.github.io/running | Keep |
-| [lusuzi](https://github.com/lusuzi) | https://running.lusuzi.vercel.app | Nike |
-| [wh1994](https://github.com/wh1994) | https://run4life.fun | Garmin |
-| [liuyihui](https://github.com/YiHui-Liu) | https://run.foolishfox.cn | Keep |
-| [FrankSun](https://github.com/hi-franksun) | https://hi-franksun.github.io/running_page | Nike |
-| [AhianZhang](https://github.com/AhianZhang) | https://running.ahianzhang.com | Keep |
-| [L1cardo](https://github.com/L1cardo) | https://run.licardo.cn | Nike |
-| [luckylele666](https://github.com/luckylele666) | https://0000928.xyz | Strava |
-
-## 它是怎么工作的
-
-![image](https://user-images.githubusercontent.com/15976103/105784027-e1ad9900-5fb2-11eb-9479-372be21482f1.png)
-
-## 特性
-
-1. GitHub Actions 管理自动同步跑步进程及自动生成新的页面
-2. Gatsby 生成的静态网页，速度快
-3. 支持 Vercel(推荐) 和 GitHub Pages 自动部署
-4. React Hooks
-5. Mapbox 进行地图展示
-6. Nike 及 Runtastic(Adidas Run) 以及佳明（佳明中国）及 Keep 等, 自动备份 gpx 数据，方便备份及上传到其它软件
-
-> 因为数据存在 gpx 和 data.db 中，理论上支持几个软件一起，你可以把之前各类 app 的数据都同步到这里（建议本地同步，之后 actions 选择正在用的 app）
-
-<details>
-<summary>缩放地图彩蛋</summary>
-
-![image](https://user-images.githubusercontent.com/15976103/95644909-a31bcd80-0aec-11eb-9270-869b0a94f59f.png)
-
-</details>
+# 文档
 
 ## 支持
 - **[Strava](#strava)**
@@ -326,12 +268,13 @@ python3(python) scripts/nike_sync.py eyJhbGciThiMTItNGIw******
 1. 注册/登陆 [Strava](https://www.strava.com/) 账号
 2. 登陆成功后打开 [Strava Developers](http://developers.strava.com) -> [Create & Manage Your App](https://strava.com/settings/api)
 
-3. 创建 `My API Application`   
+3. 创建 `My API Application`
+
 输入下列信息：
 ![My API Application](https://raw.githubusercontent.com/shaonianche/gallery/master/running_page/strava_settings_api.png)
 创建成功：
 ![](https://raw.githubusercontent.com/shaonianche/gallery/master/running_page/created_successfully_1.png)
-4. 使用以下链接请求所有权限   
+1. 使用以下链接请求所有权限   
 将 ${your_id} 替换为 My API Application 中的 Client ID 后访问完整链接
 ```
 https://www.strava.com/oauth/authorize?client_id=${your_id}&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=read_all,profile:read_all,activity:read_all,profile:write,activity:write
@@ -417,7 +360,7 @@ python3(python) scripts/gen_svg.py --from-db --title "${{ env.TITLE_GRID }}" --t
 python3(python) scripts/gen_svg.py --from-db --type circular --use-localtime
 ```
 
-更多展示效果参见：   
+更多展示效果参见：
 https://github.com/flopp/GpxTrackPoster
 
 </details>
