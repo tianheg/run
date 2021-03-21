@@ -17,3 +17,4 @@ _site/
 .vscode
 
 config.yaml
+scripts/data.db
