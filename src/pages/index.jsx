@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-multi-assign */
 import React, { useState, useEffect } from 'react';
 import Layout from 'src/components/Layout';
 import SVGStat from 'src/components/SVGStat';
@@ -24,7 +26,7 @@ export default () => {
   const [year, setYear] = useState(thisYear);
   const [runIndex, setRunIndex] = useState(-1);
   const [runs, setActivity] = useState(
-    filterAndSortRuns(activities, year, filterYearRuns, sortDateFunc)
+    filterAndSortRuns(activities, year, filterYearRuns, sortDateFunc),
   );
   const [title, setTitle] = useState('');
   const [geoData, setGeoData] = useState(geoJsonForRuns(runs));
@@ -62,9 +64,10 @@ export default () => {
     changeByItem(city, 'City', filterCityRuns);
   };
 
-  const changeTitle = (title) => {
+  // eslint-disable-next-line no-shadow
+  function changeTitle(title) {
     changeByItem(title, 'Title', filterTitleRuns);
-  };
+  }
 
   const locateActivity = (run) => {
     setGeoData(geoJsonForRuns([run]));
@@ -124,7 +127,7 @@ export default () => {
           rect.addEventListener(
             'click',
             () => locateActivity(runLocate),
-            false
+            false,
           );
         }
       }
@@ -144,13 +147,15 @@ export default () => {
       if (USE_ANIMATION_FOR_GRID) {
         const length = polyline.getTotalLength();
         polyline.style.transition = polyline.style.WebkitTransition = 'none';
-        polyline.style.strokeDasharray = length + ' ' + length;
+        polyline.style.strokeDasharray = `${length } ${ length}`;
         polyline.style.strokeDashoffset = length;
         polyline.getBoundingClientRect();
-        polyline.style.animation = polyline.style.WebkitTransition =
-          'dash 5s linear alternate infinite';
+        // eslint-disable-next-line no-multi-assign
+        // eslint-disable-next-line no-param-reassign
+        // eslint-disable-next-line no-unused-expressions
+        polyline.style.animation = polyline.style.WebkitTransition; 'dash 5s linear alternate infinite';
         polyline.style.strokeDashoffset = '0';
-        let keyFrames = document.createElement('style');
+        const keyFrames = document.createElement('style');
         // tricky for (length-1000)
         keyFrames.innerHTML = `\
         @keyframes dash {\
@@ -158,10 +163,10 @@ export default () => {
             stroke-dasharray: 0 ${length};\
           }\
           to {\
-            stroke-dasharray: ${length} ${length-1000};\
+            stroke-dasharray: ${length} ${length - 1000};\
           }\
         }`;
-        polyline.appendChild(keyFrames)
+        polyline.appendChild(keyFrames);
       }
       const run = runs
         .filter((r) => r.start_date_local.slice(0, 10) === runName)

@@ -2,6 +2,7 @@ import React from 'react';
 import Stat from 'src/components/Stat';
 import useActivities from 'src/hooks/useActivities';
 
+// eslint-disable-next-line react/prop-types
 const PeriodStat = ({ onClick }) => {
   const { runPeriod } = useActivities();
 

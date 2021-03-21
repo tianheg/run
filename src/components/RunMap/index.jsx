@@ -7,18 +7,24 @@ import {
   MAIN_COLOR,
   PROVINCE_FILL_COLOR,
 } from 'src/utils/const';
-import {geoJsonForMap} from 'src/utils/utils'
+import { geoJsonForMap } from 'src/utils/utils';
 import useActivities from 'src/hooks/useActivities';
 import RunMapButtons from './RunMapButtons';
 import RunMarker from './RunMaker';
 import styles from './style.module.scss';
 
 const RunMap = ({
+  // eslint-disable-next-line react/prop-types
   title,
+  // eslint-disable-next-line react/prop-types
   viewport,
+  // eslint-disable-next-line react/prop-types
   setViewport,
+  // eslint-disable-next-line react/prop-types
   changeYear,
+  // eslint-disable-next-line react/prop-types
   geoData,
+  // eslint-disable-next-line react/prop-types
   thisYear,
 }) => {
   const { provinces } = useActivities();
@@ -29,7 +35,7 @@ const RunMap = ({
       map.addControl(
         new MapboxLanguage({
           defaultLanguage: 'zh',
-        })
+        }),
       );
       map.setLayoutProperty('country-label-lg', 'text-field', [
         'get',
@@ -41,26 +47,33 @@ const RunMap = ({
   // for geojson format
   filterProvinces.unshift('in', 'name');
 
+  // eslint-disable-next-line react/prop-types
   const isBigMap = viewport.zoom <= 3;
   if (isBigMap && IS_CHINESE) {
+    // eslint-disable-next-line no-param-reassign
     geoData = geoJsonForMap();
   }
 
-  const isSingleRun =
-    geoData.features.length === 1 &&
-    geoData.features[0].geometry.coordinates.length;
+  // eslint-disable-next-line react/prop-types
+  const isSingleRun = geoData.features.length === 1
+    // eslint-disable-next-line react/prop-types
+    && geoData.features[0].geometry.coordinates.length;
   let startLon;
   let startLat;
   let endLon;
   let endLat;
   if (isSingleRun) {
+    // eslint-disable-next-line react/prop-types
     const points = geoData.features[0].geometry.coordinates;
+    // eslint-disable-next-line prefer-destructuring
     [startLon, startLat] = points[0];
+    // eslint-disable-next-line react/prop-types
     [endLon, endLat] = points[points.length - 1];
   }
 
   return (
     <ReactMapGL
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...viewport}
       mapStyle="mapbox://styles/mapbox/dark-v9"
       onViewportChange={setViewport}

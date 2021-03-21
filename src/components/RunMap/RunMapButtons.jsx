@@ -1,8 +1,10 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react';
 import { MAIN_COLOR } from 'src/utils/const';
 import useActivities from 'src/hooks/useActivities';
 import styles from './style.module.scss';
 
+// eslint-disable-next-line react/prop-types
 const RunMapButtons = ({ changeYear, thisYear }) => {
   const { years } = useActivities();
   const yearsButtons = years.slice();
@@ -22,6 +24,8 @@ const RunMapButtons = ({ changeYear, thisYear }) => {
     <div>
       <ul className={styles.buttons}>
         {yearsButtons.map((year) => (
+          // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
           <li
             key={`${year}button`}
             style={{ color: year === thisYear ? MAIN_COLOR : 'white' }}

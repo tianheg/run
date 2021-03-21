@@ -23,7 +23,7 @@ const useActivities = () => {
           }
         }
       }
-    `
+    `,
   );
 
   const activities = allActivitiesJson.nodes;

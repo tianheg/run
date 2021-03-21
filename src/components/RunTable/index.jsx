@@ -1,30 +1,34 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable jsx-a11y/control-has-associated-label */
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React, { useState } from 'react';
-import RunRow from './RunRow';
-import styles from './style.module.scss';
 import { sortDateFunc, sortDateFuncReverse } from 'src/utils/utils';
 import { MAIN_COLOR } from 'src/utils/const';
+import RunRow from './RunRow';
+import styles from './style.module.scss';
 
 const RunTable = ({
+  // eslint-disable-next-line react/prop-types
   runs,
+  // eslint-disable-next-line react/prop-types
   locateActivity,
+  // eslint-disable-next-line react/prop-types
   setActivity,
+  // eslint-disable-next-line react/prop-types
   runIndex,
+  // eslint-disable-next-line react/prop-types
   setRunIndex,
 }) => {
   const [sortFuncInfo, setSortFuncInfo] = useState('');
   // TODO refactor?
-  const sortKMFunc = (a, b) =>
-    sortFuncInfo === 'KM' ? a.distance - b.distance : b.distance - a.distance;
-  const sortPaceFunc = (a, b) =>
-    sortFuncInfo === 'Pace'
-      ? a.average_speed - b.average_speed
-      : b.average_speed - a.average_speed;
-  const sortBPMFunc = (a, b) =>
-    sortFuncInfo === 'BPM'
-      ? a.average_heartrate - b.average_heartrate
-      : b.average_heartrate - a.average_heartrate;
-  const sortDateFuncClick =
-    sortFuncInfo === 'Date' ? sortDateFunc : sortDateFuncReverse;
+  const sortKMFunc = (a, b) => (sortFuncInfo === 'KM' ? a.distance - b.distance : b.distance - a.distance);
+  const sortPaceFunc = (a, b) => (sortFuncInfo === 'Pace'
+    ? a.average_speed - b.average_speed
+    : b.average_speed - a.average_speed);
+  const sortBPMFunc = (a, b) => (sortFuncInfo === 'BPM'
+    ? a.average_heartrate - b.average_heartrate
+    : b.average_heartrate - a.average_heartrate);
+  const sortDateFuncClick = sortFuncInfo === 'Date' ? sortDateFunc : sortDateFuncReverse;
   const sortFuncMap = new Map([
     ['KM', sortKMFunc],
     ['Pace', sortPaceFunc],
@@ -43,6 +47,7 @@ const RunTable = ({
       const el = document.getElementsByClassName(styles.runRow);
       el[runIndex].style.color = MAIN_COLOR;
     }
+    // eslint-disable-next-line react/prop-types
     setActivity(runs.sort(f));
   };
 
@@ -51,6 +56,7 @@ const RunTable = ({
       <table className={styles.runTable} cellSpacing="0" cellPadding="0">
         <thead>
           <tr>
+            // eslint-disable-next-line jsx-a11y/control-has-associated-label
             <th />
             {Array.from(sortFuncMap.keys()).map((k) => (
               <th key={k} onClick={(e) => handleClick(e)}>
@@ -60,6 +66,8 @@ const RunTable = ({
           </tr>
         </thead>
         <tbody>
+          // eslint-disable-next-line react/prop-types
+          // eslint-disable-next-line react/prop-types
           {runs.map((run) => (
             <RunRow
               runs={runs}

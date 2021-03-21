@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { AVATAR, NAVS } from 'src/utils/const';
 
-const Header = ({ siteTitle }) => {
-  if (!AVATAR && !NAVS) return null;
+// eslint-disable-next-line react/prop-types
+function Header({ siteTitle }) {
+  if (!AVATAR && !NAVS) { return null; }
   return (
     <>
       <nav
@@ -27,6 +28,7 @@ const Header = ({ siteTitle }) => {
           <div className="dib w-75 v-mid tr">
             {NAVS.map((n, i) => (
               <a
+                // eslint-disable-next-line react/no-array-index-key
                 key={i}
                 href={n.link}
                 className="light-gray link dim f6 f5-l mr3 mr4-l"
@@ -39,6 +41,6 @@ const Header = ({ siteTitle }) => {
       </nav>
     </>
   );
-};
+}
 
 export default Header;

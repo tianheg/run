@@ -1,10 +1,15 @@
 import React from 'react';
 import { Marker } from 'react-map-gl';
+// eslint-disable-next-line import/no-unresolved
 import StartSvg from 'assets/start.svg';
+// eslint-disable-next-line import/no-unresolved
 import EndSvg from 'assets/end.svg';
 import styles from './style.module.scss';
 
-const RunMarker = ({ startLon, startLat, endLon, endLat }) => {
+const RunMarker = ({
+  // eslint-disable-next-line react/prop-types
+  startLon, startLat, endLon, endLat,
+}) => {
   const size = 20;
   return (
     <div>

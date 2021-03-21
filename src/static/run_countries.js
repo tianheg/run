@@ -243,4 +243,5 @@ const chinaGeojson = {
         ],
 };
 
+// eslint-disable-next-line import/prefer-default-export
 export { chinaGeojson };

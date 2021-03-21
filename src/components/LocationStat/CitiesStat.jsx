@@ -3,7 +3,8 @@ import Stat from 'src/components/Stat';
 import useActivities from 'src/hooks/useActivities';
 
 // only support China for now
-const CitiesStat = ({ onClick }) => {
+// eslint-disable-next-line react/prop-types
+function CitiesStat({ onClick }) {
   const { cities } = useActivities();
 
   const citiesArr = Object.entries(cities);
@@ -24,6 +25,6 @@ const CitiesStat = ({ onClick }) => {
       <hr color="red" />
     </div>
   );
-};
+}
 
 export default CitiesStat;
