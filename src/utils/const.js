@@ -1,6 +1,5 @@
 // const
-const MAPBOX_TOKEN =
-  "pk.eyJ1IjoiMTExMzkxMDIzOCIsImEiOiJja21oanpwd2swODQ4MndwZmVmcmpvdmFwIn0.EDsB2amEjGEsipVyirI7NA";
+const MAPBOX_TOKEN = 'pk.eyJ1IjoiMTExMzkxMDIzOCIsImEiOiJja21oanpwd2swODQ4MndwZmVmcmpvdmFwIn0.EDsB2amEjGEsipVyirI7NA';
 const MUNICIPALITY_CITIES_ARR = [
   '北京市',
   '上海市',
@@ -13,10 +12,8 @@ const MUNICIPALITY_CITIES_ARR = [
 // IF you outside China please make sure IS_CHINESE = false
 const IS_CHINESE = true;
 const USE_ANIMATION_FOR_GRID = false;
-const CHINESE_INFO_MESSAGE = (yearLength, year) =>
-  `我用 App 记录自己跑步 ${yearLength} 年了，下面列表展示的是 ${year} 的数据`;
-const ENGLISH_INFO_MESSAGE = (yearLength, year) =>
-  `Running Journey with ${yearLength} Years, the table shows year ${year} data`;
+const CHINESE_INFO_MESSAGE = (yearLength, year) => `我用 App 记录自己跑步 ${yearLength} 年了，下面列表展示的是 ${year} 的数据`;
+const ENGLISH_INFO_MESSAGE = (yearLength, year) => `Running Journey with ${yearLength} Years, the table shows year ${year} data`;
 
 const INFO_MESSAGE = IS_CHINESE ? CHINESE_INFO_MESSAGE : ENGLISH_INFO_MESSAGE;
 const FULL_MARATHON_RUN_TITLE = IS_CHINESE ? '全程马拉松' : 'Full Marathon';
@@ -46,11 +43,10 @@ export {
   USE_ANIMATION_FOR_GRID,
 };
 
-export const AVATAR =
-  "https://avatars.githubusercontent.com/u/52186032?s=460&u=335da741e41d95657c44fe75da188ee3150827a8&v=4"; // Temp avatar
+export const AVATAR = 'https://avatars.githubusercontent.com/u/52186032?s=460&u=335da741e41d95657c44fe75da188ee3150827a8&v=4'; // Temp avatar
 export const NAVS = [
-  { text: "Blog", link: "https://blog.yidajiabei.xyz/" },
-  { text: "About", link: "https://github.com/tianheg/run" },
+  { text: 'Blog', link: 'https://blog.yidajiabei.xyz/' },
+  { text: 'About', link: 'https://github.com/tianheg/run' },
 ];
 
 const nike = 'rgb(224,237,94)';
