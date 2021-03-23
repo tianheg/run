@@ -24,8 +24,8 @@ env:
   ATHLETE: Tianheg
   TITLE: Tianheg Running
   TITLE_GRID: Tianheg Runs
-  GITHUB_NAME: tianheg
-  GITHUB_EMAIL: yidajiabei@163.com
+  GITHUB_NAME: github-actions[bot] 
+  GITHUB_EMAIL: <41898282+github-actions[bot]@users.noreply.github.com>
 
 jobs:
   sync:
