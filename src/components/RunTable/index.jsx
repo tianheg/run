@@ -65,8 +65,6 @@ const RunTable = ({
           </tr>
         </thead>
         <tbody>
-          // eslint-disable-next-line react/prop-types
-          // eslint-disable-next-line react/prop-types
           {runs.map((run) => (
             <RunRow
               runs={runs}
