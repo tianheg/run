@@ -56,7 +56,6 @@ const RunTable = ({
       <table className={styles.runTable} cellSpacing="0" cellPadding="0">
         <thead>
           <tr>
-            // eslint-disable-next-line jsx-a11y/control-has-associated-label
             <th />
             {Array.from(sortFuncMap.keys()).map((k) => (
               <th key={k} onClick={(e) => handleClick(e)}>

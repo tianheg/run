@@ -24,8 +24,6 @@ const RunMapButtons = ({ changeYear, thisYear }) => {
     <div>
       <ul className={styles.buttons}>
         {yearsButtons.map((year) => (
-          // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-          // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
           <li
             key={`${year}button`}
             style={{ color: year === thisYear ? MAIN_COLOR : 'white' }}
