@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.yidajiabei.xyz/sitemap.xml
-Host: https://www.yidajiabei.xyz
+Sitemap: https://run.yidajiabei.xyz/sitemap.xml
+Host: https://run.yidajiabei.xyz
