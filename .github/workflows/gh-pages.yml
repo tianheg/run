@@ -55,18 +55,10 @@ jobs:
       - run: |
           yarn build --prefix-paths
 
-      - name: GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v2.2.0
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          # Git branch where site will be deployed
-          target_branch: gh-pages
-          # Create incremental commit instead of doing push force
-          keep_history: true
-          # Build directory to deploy
-          build_dir: public
-          # Write the given domain name to the CNAME file
-          #fqdn: custom.domain.name # optional
-          # Prevent Jekyll from building the site
-          jekyll: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          cname: run.yidajiabei.xyz
+          user_name: 'github-actions[bot]'
+          user_email: '41898282+github-actions[bot]@users.noreply.github.com'
